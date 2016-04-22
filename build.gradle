@@ -19,6 +19,6 @@ allprojects {
     }
 }
 
-tasks.getByPath(':app:connectedCheck').mustRunAfter(':backend:appengineRun')
+tasks.getByPath(':app:connectedCheck').mustRunAfter(':backend:runAppEngine')
 tasks.getByPath(':backend:appengineStop').mustRunAfter(':app:connectedCheck')
-task runConnectedTest (dependsOn: [':backend:appengineRun',':app:connectedCheck', ':backend:appengineStop']) {}
+task runConnectedTest (dependsOn: [':backend:runAppEngine',':app:connectedCheck', ':backend:appengineStop']) {}
